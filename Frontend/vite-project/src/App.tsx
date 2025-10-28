@@ -1,30 +1,22 @@
 import CartDrawer from "./pages/cartDrawer";
-import { useCart } from "./context/cartContext";
 import Products from "./pages/Products";
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes} from "react-router-dom";
 import CheckoutPage from "./pages/checkoutPage";
+import Navbar from "./component/Navbar";
+import { Toaster } from "react-hot-toast";
 
 function App() {
-  const { openDrawer } = useCart();
-  const navigate =useNavigate()
 
   return (
     <>
-      <nav className="p-4 shadow flex justify-between">
-        <h1 className="text-xl font-bold">Vibe Commerce</h1>
-        <button
-          onClick={()=>navigate('/cartDrawer')}
-          className="bg-black text-white px-4 py-2 rounded"
-        >
-          Cart
-        </button>
-      </nav>
-
+    <Navbar/>
        <Routes>
         <Route path="/" element={<Products />} />
         <Route path="/cartDrawer" element={<CartDrawer />} />
         <Route path="/checkout" element={<CheckoutPage />} />
+        <Route path="*" element={<h2 className="flex justify-center align-center mt-20 font-bold text-3xl">404 Page Not Found</h2>} />
       </Routes>
+     
     </>
   );
 }

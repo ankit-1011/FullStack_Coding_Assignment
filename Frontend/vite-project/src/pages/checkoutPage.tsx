@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Footer } from "../component/Footer";
 
 const CheckoutPage = () => {
   const [name, setName] = useState("");
@@ -25,6 +26,7 @@ const CheckoutPage = () => {
   };
 
   return (
+    <>
     <div className="max-w-lg mx-auto mt-10 p-6 border rounded-lg shadow">
       <h1 className="text-2xl font-bold mb-5">Checkout</h1>
 
@@ -51,7 +53,7 @@ const CheckoutPage = () => {
         <button
           type="submit"
           disabled={loading}
-          className="w-full bg-black text-white py-2 rounded disabled:opacity-50"
+          className="w-full bg-blue-500 text-white rounded-2xl p-2 m-2   shadow-md active:shadow-indigo-500/50 active:scale-95"
         >
           {loading ? "Processing..." : "Place Order"}
         </button>
@@ -82,14 +84,16 @@ const CheckoutPage = () => {
 
             <button
               onClick={handleCloseModal}
-              className="w-full bg-black text-white py-2 rounded"
+              className="w-full bg-blue-500 text-white rounded-2xl p-2 m-2   shadow-md active:shadow-indigo-500/50 active:scale-95"
             >
               Close
             </button>
           </div>
         </div>
       )}
-    </div>
+      </div>
+    <Footer/>
+    </>
   );
 };
 

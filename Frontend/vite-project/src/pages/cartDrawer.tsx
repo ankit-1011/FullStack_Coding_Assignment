@@ -51,7 +51,7 @@ const CartDrawer = () => {
           <span>Total:</span>
           <span>₹{total}</span>
         </div>
-        <button className="w-full bg-black text-white py-2 rounded" onClick={()=>navigate('/checkout')}>
+        <button className="w-full bg-blue-500 text-white rounded-2xl p-2   shadow-md active:shadow-indigo-500/50 active:scale-95" onClick={()=>navigate('/checkout')}>
           Checkout
         </button>
       </div>

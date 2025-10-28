@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "pnpm": "^10.19.0"
+    "pnpm": "^10.19.0",
+    "react-hot-toast": "^2.6.0"
   }
 }
