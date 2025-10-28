@@ -1,8 +1,10 @@
-import React from "react";
+import { useNavigate } from "react-router-dom";
 import { useCart } from "../context/cartContext";
 
 const CartDrawer = () => {
   const { cart, total, isDrawerOpen, closeDrawer, removeFromCart } = useCart();
+
+  const navigate = useNavigate();
 
   return (
     <div
@@ -49,12 +51,12 @@ const CartDrawer = () => {
           <span>Total:</span>
           <span>₹{total}</span>
         </div>
-        <button className="w-full bg-black text-white py-2 rounded">
+        <button className="w-full bg-black text-white py-2 rounded" onClick={()=>navigate('/checkout')}>
           Checkout
         </button>
       </div>
     </div>
   );
-};
+}
 
-export default CartDrawer;
+export default CartDrawer
