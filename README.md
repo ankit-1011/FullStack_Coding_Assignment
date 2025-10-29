@@ -85,6 +85,9 @@ Users can preview total price before finalizing purchase.
 Confirmation summary of purchase.
 ![Receipt Page](./Frontend/vite-project/src/assets/Receipt.png)
 
+Data had been stored in the MongoDB Database.
+![Receipt Page](./Frontend/vite-project/src/assets/Receipt.png)
+
 ## ✅ API Endpoints
 
 | Method | Endpoint      | Description              |
@@ -95,4 +98,4 @@ Confirmation summary of purchase.
 
 ---
 
-More documentation coming soon.
+
