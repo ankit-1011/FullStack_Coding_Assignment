@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import type { Product } from '../types/product';
-import { getProducts } from '../services/productServices';
 import { useCart } from '../context/cartContext';
 import Promotional from '../component/Promotional';
 import { NewsLetter } from '../component/NewsLetter';

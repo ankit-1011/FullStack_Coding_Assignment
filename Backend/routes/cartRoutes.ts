@@ -1,6 +1,7 @@
 import type { Response, Request } from 'express';
 import { Router } from "express";
 import { products } from '../data/products.ts';
+import { Order } from '../Schema/vibeSchema.ts';
 
 const router = Router();
 
@@ -62,33 +63,63 @@ return res.status(200).json({message:"Product removed from cart",cart})
 })
 
 
-router.post('/checkout',(req:Request,res:Response)=>{
-    if(cart.length===0){
-        return res.status(400).json({message:"Cart is empty"});
-    }
 
-      const detailedCart = cart.map((item) => {
-        const product = products.find((p) => p.id === item.productId);
-        return {
-            ...item,
-            name: product?.name,
-            price: product?.price,
-            subtotal: product ? product.price * item.quantity : 0,
-        }
-    })
 
-    const total = detailedCart.reduce((acc, item) => acc + item.subtotal, 0);
 
-    const receipt ={
-        id:Date.now(),
-        items:detailedCart,
+router.post("/checkout", async (req: Request, res: Response) => {
+  const { customerName, customerEmail } = req.body;
+
+  if (!customerName || !customerEmail) {
+    return res.status(400).json({ message: "Customer details required" });
+  }
+
+  if (cart.length === 0) {
+    return res.status(400).json({ message: "Cart is empty" });
+  }
+
+  const detailedCart = cart.map((item) => {
+    const product = products.find((p) => p.id === item.productId);
+    return {
+      productId: item.productId,
+      name: product?.name,
+      quantity: item.quantity,
+      subtotal: product ? product.price * item.quantity : 0,
+    };
+  });
+
+  const total = detailedCart.reduce((acc, item) => acc + item.subtotal, 0);
+
+  try {
+    const newOrder = new Order({
+      customerName,
+      customerEmail,
+      items: detailedCart,
+      total,
+    });
+
+    const savedOrder = await newOrder.save();
+
+    cart = []; // clear local cart
+
+    return res.status(200).json({
+      message: "Checkout successful",
+      receipt: {
+        id: savedOrder._id,
+        items: detailedCart,
         total,
-        timestamp:new Date().toISOString(),
-    }
+        timestamp: savedOrder.createdAt,
+      },
+    });
+  } catch (error) {
+    return res.status(500).json({
+      message: "Something went wrong while saving order",
+      error,
+    });
+  }
+});
 
-    cart=[];
 
-    res.status(200).json({message:"Checkout successful",receipt
-    })
-})
+
+
+
 export default router;

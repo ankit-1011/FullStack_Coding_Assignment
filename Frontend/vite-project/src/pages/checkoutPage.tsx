@@ -12,9 +12,18 @@ const CheckoutPage = () => {
     e.preventDefault();
     setLoading(true);
 
-    const res = await fetch("http://localhost:5000/api/checkout", {
-      method: "POST",
-    });
+   const res = await fetch("http://localhost:5000/api/checkout", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    customerName: name,
+    customerEmail: email,
+  }),
+});
+
+
     const data = await res.json();
 
     setReceipt(data.receipt);
