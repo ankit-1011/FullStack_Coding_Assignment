@@ -73,7 +73,7 @@ Displays available products with price and CTA to add to cart.
 ### 🛒 Cart Drawer
 
 Quick view of added products with running total.
-![Cart Drawer](./Frontend/vite-project/src/assets/cart_icon.svg)
+![Cart Drawer](./Frontend/vite-project/src/assets/CartSection.png)
 
 ### ✅ Checkout
 
