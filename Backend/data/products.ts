@@ -1,55 +1,124 @@
-import type{ Product } from "../type/index.ts";
+import type { Product } from "../type/index.ts";
 
-
-export const products:Product[]=[
-    
-    {
-        id:1,
-        name:"Wireless Mouse",
-        price:799,
-        image:"https://tse2.mm.bing.net/th/id/OIP.lER3YZebzgAqm9sp2AA1kwHaHa?rs=1&pid=ImgDetMain&o=7&rm=3"
-    },
-    {
-        id:2,
-        name:"Mechanical Keyboard",
-        price:2999,
-        image:"https://tse4.mm.bing.net/th/id/OIP.iJqi_sQZPWj82neUYbJ4wQHaEK?rs=1&pid=ImgDetMain&o=7&rm=3"
-    },
-    {
-        id:3,
-        name:"HD Monitor",
-        price:299,
-        image:"https://www.lg.com/in/images/monitors/md05750468/gallery/Global_MP68VQ_2016_Gallery_medium01.jpg"
-    },
-    {
-        id:4,
-        name:"USB-C-Hub",
-        price:1999,
-        image:"https://tse4.mm.bing.net/th/id/OIP.auQrTDfgfbS_OZcppYu5hwHaF4?rs=1&pid=ImgDetMain&o=7&rm=3"
-    },
-    {
-        id:5,
-        name:"External Hard Drive",
-        price:4999,
-        image:"https://m.media-amazon.com/images/I/71J5iVXpuZL.jpg"
-    },
-    {
-        id:6,
-        name:"Bluetooth Speaker",
-        price:1499,
-        image:"https://i5.walmartimages.com/asr/cdaaab64-5ea7-4d8f-969f-cff666244723.ff62693361b001ebbaf41145d23c0f13.jpeg"
-    },
-    {
-        id:7,
-        name:"Webcam",
-        price:899,
-        image:"https://i5.walmartimages.com/asr/912afc88-036b-404c-aa5f-a37c2bbc3315.871becce153588569f413746f945e50f.jpeg"
-    },
-    {
-        id:8,
-        name:"Headphones",
-        price:1999,
-        image:"https://m.media-amazon.com/images/I/811RreTN3rL.jpg"
-    },
-    
-]
+export const products: Product[] = [
+  {
+    id: 1,
+    name: "Fjallraven - Foldsack No. 1 Backpack",
+    price: 109.95,
+    image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png"
+  },
+  {
+    id: 2,
+    name: "Mens Casual Premium Slim Fit T-Shirts",
+    price: 22.3,
+    image: "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_t.png"
+  },
+  {
+    id: 3,
+    name: "Mens Cotton Jacket",
+    price: 55.99,
+    image: "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_t.png"
+  },
+  {
+    id: 4,
+    name: "Mens Casual Slim Fit",
+    price: 15.99,
+    image: "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_t.png"
+  },
+  {
+    id: 5,
+    name: "John Hardy Women's Legends Naga Bracelet",
+    price: 695,
+    image: "https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_t.png"
+  },
+  {
+    id: 6,
+    name: "Solid Gold Petite Micropave",
+    price: 168,
+    image: "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_t.png"
+  },
+  {
+    id: 7,
+    name: "White Gold Plated Princess Ring",
+    price: 9.99,
+    image: "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_t.png"
+  },
+  {
+    id: 8,
+    name: "Pierced Owl Gold Plated Earrings",
+    price: 10.99,
+    image: "https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_t.png"
+  },
+  {
+    id: 9,
+    name: "WD 2TB Portable External Hard Drive",
+    price: 64,
+    image: "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_t.png"
+  },
+  {
+    id: 10,
+    name: "SanDisk SSD PLUS 1TB Internal SSD",
+    price: 109,
+    image: "https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_t.png"
+  },
+  {
+    id: 11,
+    name: "Silicon Power 256GB SSD",
+    price: 109,
+    image: "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_t.png"
+  },
+  {
+    id: 12,
+    name: "WD 4TB Gaming Drive",
+    price: 114,
+    image: "https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_t.png"
+  },
+  {
+    id: 13,
+    name: "Acer SB220Q 21.5\" Full HD Monitor",
+    price: 599,
+    image: "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_t.png"
+  },
+  {
+    id: 14,
+    name: "Samsung CHG90 49\" Gaming Monitor",
+    price: 999.99,
+    image: "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_t.png"
+  },
+  {
+    id: 15,
+    name: "Women's 3-in-1 Snowboard Jacket",
+    price: 56.99,
+    image: "https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_t.png"
+  },
+  {
+    id: 16,
+    name: "Women's Faux Leather Moto Jacket",
+    price: 29.95,
+    image: "https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_t.png"
+  },
+  {
+    id: 17,
+    name: "Women's Windbreaker Rain Jacket",
+    price: 39.99,
+    image: "https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2t.png"
+  },
+  {
+    id: 18,
+    name: "Women's Short Sleeve Boat Neck Top",
+    price: 9.85,
+    image: "https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_t.png"
+  },
+  {
+    id: 19,
+    name: "Women's Moisture Wicking Tee",
+    price: 7.95,
+    image: "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_t.png"
+  },
+  {
+    id: 20,
+    name: "Women's Casual Cotton Short T-Shirt",
+    price: 12.99,
+    image: "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_t.png"
+  }
+];

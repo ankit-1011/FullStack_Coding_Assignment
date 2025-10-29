@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Footer } from "../component/Footer";
+import { toast } from "sonner";
 
 const CheckoutPage = () => {
   const [name, setName] = useState("");
@@ -83,7 +84,7 @@ const CheckoutPage = () => {
             </div>
 
             <button
-              onClick={handleCloseModal}
+              onClick={()=>{handleCloseModal();toast.success("Thank you for your purchase! 🎉" )}}
               className="w-full bg-blue-500 text-white rounded-2xl p-2 m-2   shadow-md active:shadow-indigo-500/50 active:scale-95"
             >
               Close

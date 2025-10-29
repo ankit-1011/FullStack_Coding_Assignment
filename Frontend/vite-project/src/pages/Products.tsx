@@ -5,19 +5,18 @@ import { useCart } from '../context/cartContext';
 import Promotional from '../component/Promotional';
 import { NewsLetter } from '../component/NewsLetter';
 import { Footer } from '../component/Footer';
-import toast from 'react-hot-toast';
+import { toast } from 'sonner';
+
 
 const Products = () => {
     const [products, setProducts] = useState<Product[]>([]);
     const { addToCart } = useCart();
 
     useEffect(() => {
-        const fetchProducts = async () => {
-            const data = await getProducts();
-            setProducts(data);
-        };
-        fetchProducts();
-    }, [])
+    fetch("https://fakestoreapi.com/products")
+      .then(res => res.json())
+      .then(data => setProducts(data));
+  }, []);
 
     return (
         <div>
@@ -28,14 +27,14 @@ const Products = () => {
             }} >
                 {products.map((p) => (
                     <div key={p.id} style={{ border: "1px solid gray", borderRadius: "8px" }} className='w-86 h-80'>
-                        <img src={p.image} alt={p.name} className='w-full h-50 object-contain  rounded-md' />
+                        <img src={p.image} alt={p.title} className='w-full h-50 object-contain  rounded-md' />
                         <div className="flex justify-between m-3">
-                            <h3 className='font-bold'>{p.name}</h3>
+                            <h3 className='font-bold'>{p.title.slice(0,20)}</h3>
                             <p className='font-bold'>₹{p.price}</p>
                         </div>
                         <button onClick={() => {
                             addToCart(p.id);
-                            toast.success(`${p.name} added to cart 🛒`);
+                            toast.success(`${p.title.slice(0,20)} added to cart 🛒`);
                         }}
                             className='bg-blue-500 text-white rounded-2xl p-2 m-2 w-80  shadow-md active:shadow-indigo-500/50 active:scale-95'>Add to Cart</button>
                     </div>

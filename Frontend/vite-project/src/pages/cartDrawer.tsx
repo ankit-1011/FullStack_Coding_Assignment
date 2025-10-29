@@ -9,14 +9,14 @@ const CartDrawer = () => {
   return (
     <div
       className={`fixed top-0 right-0 h-full w-80 bg-white shadow-xl transform transition-transform duration-300 z-50 ${
-        isDrawerOpen ? "translate-x-0" : "translate-x-full"
+        isDrawerOpen ? "translate-x-0" : "translate-x-0"
       }`}
     >
       <div className="flex justify-between items-center p-4 border-b">
         <h2 className="text-lg font-bold">Your Cart</h2>
         <button
           className="text-red-500 font-bold"
-          onClick={closeDrawer}
+          onClick={()=>navigate(-1)}
         >
           ✕
         </button>
@@ -24,7 +24,7 @@ const CartDrawer = () => {
 
       <div className="p-4 space-y-4 overflow-y-auto h-[75vh]">
         {cart.length === 0 ? (
-          <p>Your cart is empty</p>
+          <p >Your cart is empty</p>
         ) : (
           cart.map((item) => (
             <div

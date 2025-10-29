@@ -40,11 +40,11 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
       body: JSON.stringify({ productId, quantity }),
     });
     await fetchCart();
-    setIsDrawerOpen(true); // automatically open drawer when item added
+    setIsDrawerOpen(true);
   };
 
   const removeFromCart = async (productId: number) => {
-    await fetch(`http://localhost:5000/api/cart/${productId}`, {
+    await fetch(`http://localhost:5000/cart/${productId}`, {
       method: "DELETE",
     });
     await fetchCart();
@@ -59,7 +59,16 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <CartContext.Provider
-      value={{ cart, total, fetchCart, addToCart, removeFromCart, isDrawerOpen, openDrawer, closeDrawer }}
+      value={{
+        cart,
+        total,
+        fetchCart,
+        addToCart,
+        removeFromCart,
+        isDrawerOpen,
+        openDrawer,
+        closeDrawer,
+      }}
     >
       {children}
     </CartContext.Provider>
