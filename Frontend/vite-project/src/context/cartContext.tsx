@@ -43,12 +43,12 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
     setIsDrawerOpen(true);
   };
 
-  const removeFromCart = async (productId: number) => {
-    await fetch(`http://localhost:5000/cart/${productId}`, {
-      method: "DELETE",
-    });
-    await fetchCart();
-  };
+ const removeFromCart = async (productId: number) => {
+  await fetch(`http://localhost:5000/api/cart/${productId}`, {
+    method: "DELETE",
+  });
+  await fetchCart();
+};
 
   useEffect(() => {
     fetchCart();
