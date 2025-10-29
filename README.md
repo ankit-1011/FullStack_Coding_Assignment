@@ -85,8 +85,10 @@ Users can preview total price before finalizing purchase.
 Confirmation summary of purchase.
 ![Receipt Page](./Frontend/vite-project/src/assets/Receipt.png)
 
-Data had been stored in the MongoDB Database.
-![Receipt Page](./Frontend/vite-project/src/assets/Receipt.png)
+### 🗃️ Database
+
+This project uses MongoDB as the primary database for storing product and order information.
+![Receipt Page](./Frontend/vite-project/src/assets/mongoCompass.png)
 
 ## ✅ API Endpoints
 
